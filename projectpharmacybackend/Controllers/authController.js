@@ -1,7 +1,6 @@
-// A simple in-memory storage for users
+
 let users = [];
 
-// Controller function for handling sign-up logic
 const signUp = (req, res) => {
     const { name, email, password } = req.body;
 
@@ -16,7 +15,6 @@ const signUp = (req, res) => {
     res.status(201).json({ message: 'User created successfully' });
 };
 
-// Controller function for handling login logic
 const login = (req, res) => {
     const { email, password } = req.body;
 
@@ -25,7 +23,7 @@ const login = (req, res) => {
         return res.status(400).json({ message: 'Invalid email or password' });
     }
 
-    req.session.userId = email; // Using email as a simple user identifier
+    req.session.userId = email;
     res.status(200).json({ message: 'Login successful' });
 };
 

@@ -5,15 +5,15 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const fs = require('fs');
 const path = require('path');
-app.use(cors({
-    origin: 'http://localhost:3000', // Allow requests from this origin
-  }));
-
+app.use(cors({}));
 app.use(express.json());
 app.use(session({
   secret: 'yourSecret',
   resave: false,
   saveUninitialized: false,
+  cookie: { 
+    maxAge: 2 * 60 * 60 * 1000 
+  }
 }));
 
 let products = [
@@ -53,7 +53,7 @@ let products = [
   
       fs.readFile(filePath, (err, data) => {
         if (err && err.code === 'ENOENT') {
-          // File doesn't exist, so create it with the initial data
+
           fs.writeFile(filePath, JSON.stringify([contactMessage], null, 2), (err) => {
             if (err) {
               return res.status(500).json({ error: 'Error saving message.' });
@@ -62,12 +62,12 @@ let products = [
           });
         } else if (err) {
           return res.status(500).json({ error: 'Error reading file.' });
-        } else {
+        } else {///file exists
           let messages;
           try {
             messages = JSON.parse(data);
           } catch (parseError) {
-            // Handle parsing errors (e.g., empty or malformed JSON)
+            
             messages = [];
           }
           messages.push(contactMessage);
