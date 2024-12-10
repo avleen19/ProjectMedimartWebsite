@@ -1,0 +1,141 @@
+/* Fullscreen Login Page */
+.login-page-body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #30577d; /* Darker blue background */
+  color: #fff; /* Light text for better contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  min-height: 100%; /* Ensures the body takes the full height of the viewport */
+  flex-direction: column;
+}
+
+/* Login Page Container */
+.login-page-container {
+  width: 100%;
+  max-width: 400px; /* Maximum width for the form */
+  background: #fff; /* White background for the login box */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Logo wrapper for centered logo */
+.login-page-logo-wrapper {
+  text-align: center;
+  margin-bottom: 20px; /* Reduced space below logo */
+}
+
+.login-page-logo {
+  width: 120px; /* Adjust logo size */
+  margin-bottom: 20px;
+  animation: zoomInOut 4s ease-in-out infinite;
+}
+
+/* Heading for the login box */
+.login-page-heading {
+  font-size: 2.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Input fields */
+.login-page-input[type="text"],
+.login-page-input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.login-page-input[type="text"]:focus,
+.login-page-input[type="password"]:focus {
+  border-color: #4da8d1;
+  box-shadow: 0 0 5px rgba(77, 168, 209, 0.6);
+}
+
+.login-page-input[type="text"],
+.login-page-input[type="password"]::placeholder {
+  color: #888;
+}
+
+/* Forgot password link */
+.login-page-forgot-password {
+  display: block;
+  margin-top: 10px;
+  color: #4da8d1;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.login-page-forgot-password:hover {
+  color: #3a7ca5;
+}
+
+/* Login button */
+.login-page-button {
+  width: 100%;
+  padding: 14px;
+  background: #1e4a74; /* Dark blue button */
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: 0.3s;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.login-page-button:hover {
+  background: #3e7dbf;
+  transform: translateY(-5px);
+}
+
+.login-page-button:focus {
+  outline: none;
+}
+
+/* Alert message */
+.login-page-alert {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ff6f61;
+}
+
+/* Ensure login form is responsive */
+@media (max-width: 576px) {
+  .login-page-container {
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  .login-page-heading {
+    font-size: 1.8rem; /* Smaller heading font for smaller screens */
+  }
+
+  .login-page-logo {
+    width: 100px; /* Reduced logo size for small screens */
+  }
+
+  .login-page-input[type="text"],
+  .login-page-input[type="password"] {
+    padding: 10px; /* Smaller input field padding */
+  }
+
+  .login-page-button {
+    padding: 12px; /* Smaller button padding */
+  }
+}

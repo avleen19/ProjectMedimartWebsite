@@ -1,0 +1,159 @@
+/* SignUp.css */
+
+.signup-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4db8ff, #4a81ae);
+  color: #fff;
+}
+
+.signup-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
+  background: #fff;
+  color: #333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.signup-form-wrapper {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #104103;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: linear-gradient(to right, #4db8ff, #688de2);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: linear-gradient(to right, #5eae4a, #4db8ff);
+}
+
+.signup-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-footer a {
+  color: #4db8ff;
+  text-decoration: none;
+}
+
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+.signup-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-overlay {
+  text-align: center;
+  background: rgba(84, 138, 209, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  animation: fadeIn 2s ease-in-out;
+  margin-right: 20px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.animated-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  animation: slideIn 2s ease-in-out;
+}
+
+.animated-text::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #fff;
+  margin: 10px auto 0;
+}
+
+.explore-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.explore-btn:hover {
+  background: #fff;
+  color: #4db8ff;
+  border-color: #4db8ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .signup-image {
+    height: 300px;
+  }
+
+  .image-overlay {
+    border-radius: 0;
+  }
+}

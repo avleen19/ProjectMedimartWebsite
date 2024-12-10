@@ -1,0 +1,77 @@
+.contact-buttons {
+    position: fixed; /* Fixed position for the buttons */
+    top: 50%; /* Vertically centered */
+    right: 5px; /* Positioned near the right border */
+    transform: translateY(-50%); /* Center the buttons vertically */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    z-index: 1000; /* Ensure buttons stay on top */
+  }
+  
+  .contact-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make the buttons circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    cursor: pointer;
+    position: relative; /* Position for the tooltip */
+    overflow: hidden; /* Hide any overflow */
+  }
+  
+  .contact-button.phone {
+    background-color: #57982b; /* Green for phone button */
+  }
+  
+  .contact-button.email {
+    background-color: #dc3545; /* Light red for email button */
+  }
+  
+  .contact-linkk {
+    color: #fff; /* Icon color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 20px; /* Icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-info {
+    display: none; /* Hide contact info by default */
+    position: absolute; /* Absolute position for tooltip */
+    left: 60px; /* Position to the left of the button */
+    top: 50%; /* Center vertically relative to the button */
+    transform: translateY(-50%); /* Center vertically */
+    background: #333; /* Dark background for the tooltip */
+    color: #fff; /* Text color */
+    padding: 10px; /* Padding for tooltip */
+    border-radius: 5px; /* Rounded corners */
+    white-space: nowrap; /* Prevent text from wrapping */
+    font-size: 12px; /* Font size for info */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for better visibility */
+    display: flex;
+    align-items: center; /* Align items vertically in the tooltip */
+  }
+  
+  .contact-info::before {
+    content: ''; /* Empty content for the arrow */
+    position: absolute;
+    right: 100%; /* Position the arrow to the left of the tooltip */
+    top: 50%; /* Center the arrow vertically */
+    transform: translateY(-50%); /* Center the arrow vertically */
+    border-width: 10px; /* Arrow size */
+    border-style: solid;
+    border-color: transparent #333 transparent transparent; /* Arrow pointing to the button */
+  }
+  
+  .contact-button.phone:hover .contact-info.phone,
+  .contact-button.email:hover .contact-info.email {
+    display: flex; /* Show contact info on hover */
+  }
+  
+  .contact-button:hover {
+    background-color: #333; /* Optional: Change button color on hover for better contrast */
+  }

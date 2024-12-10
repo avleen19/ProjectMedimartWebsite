@@ -1,0 +1,141 @@
+/* General Styles */
+.about-us {
+    padding: 30px;
+    background: linear-gradient(135deg, #a8c0ff 0%, #3f4d67 100%);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it fills at least the full viewport height */
+    box-sizing: border-box; /* Ensure padding is included in total height */
+  }
+  
+  .headingabt {
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+    position: relative;
+    animation: fadeIn 2s ease-in-out forwards, textTransform 3s ease-in-out infinite; /* Animations */
+    background: linear-gradient(90deg, #1a0b2e, #3f88c5, #1e3d58);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Animation for Text transformation */
+  @keyframes textTransform {
+    0% { letter-spacing: 0px; transform: rotate(-5deg); }
+    50% { letter-spacing: 5px; transform: rotate(5deg); }
+    100% { letter-spacing: 0px; transform: rotate(0); }
+  }
+  
+  /* Logo and Box Styles (unchanged) */
+  .boxabt {
+    background-color: #ffffff;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideInUp 1.5s ease-out forwards;
+  }
+  
+  .logoabt img {
+    height: 130px;
+    width: 160px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInLogo 2s ease-in-out 1s forwards;
+  }
+  
+  .paraabt {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333333;
+    margin-top: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInText 2s ease-in-out 0.5s forwards;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+  }
+  
+  /* Fade-in animation for headings and content */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Slide-in animation for box */
+  @keyframes slideInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Fade-in animation for logo */
+  @keyframes fadeInLogo {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Fade-in animation for paragraphs */
+  @keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Hover effects for logo */
+  .about-us .logoabt:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effects for paragraphs */
+  .about-us .paraabt:hover {
+    color: #1e3d58;
+    transition: color 0.3s ease;
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effects for box */
+  .boxabt:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .headingabt {
+      font-size: 50px;
+    }
+  
+    .boxabt {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .paraabt {
+      font-size: 16px;
+      padding-bottom: 10px;
+    }
+  }
+  
