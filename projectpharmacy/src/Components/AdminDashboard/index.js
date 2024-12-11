@@ -59,7 +59,7 @@ const AdminDashboard = () => {
         };
 
         try {
-            const response = await axios.post('https://projectmedimartwebsite-backend.onrender.com', productToAdd);
+            const response = await axios.post('https://projectmedimartwebsite-backend.onrender.com/api/products', productToAdd);
             setProducts([...products, response.data]);
             console.log('Product added:', response.data); 
             setNewProduct({ name: '', price: '', description: '', imageUrl: '', category: '', quantity: '' });
