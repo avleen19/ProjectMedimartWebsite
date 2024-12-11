@@ -17,7 +17,7 @@ const ProductPage = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/products', {
+                const response = await axios.get('https://projectmedimartwebsite-backend.onrender.com/api/products', {
                     params: {
                         category: categoryId || undefined,
                         q: searchTerm
@@ -43,7 +43,7 @@ const ProductPage = () => {
     const handleSearchSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:5000/api/products?q=${searchTerm}`);
+            const response = await axios.get(`https://projectmedimartwebsite-backend.onrender.com/api/products?q=${searchTerm}`);
             if (response.data && Array.isArray(response.data)) {
                 navigate('/search-results', { state: { products: response.data } });
                 toast.success('Search successful!'); 
