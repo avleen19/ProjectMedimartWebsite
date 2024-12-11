@@ -26,7 +26,7 @@ const Cart = () => {
                 quantity: item.quantity,
                 totalPrice: item.price * item.quantity
             }));
-            const response = await axios.post('http://localhost:5000/api/checkout', {
+            const response = await axios.post('https://projectmedimartwebsite-backend.onrender.com/api/checkout', {
                 token: token.id,
                 amount: totalPrice * 100,  
                 products: products,       
