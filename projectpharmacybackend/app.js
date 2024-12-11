@@ -30,7 +30,7 @@ require('dotenv').config();
 //     cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 }
 // }));
 
-const MONGODB_URI = 'mongodb+srv://avleenkaur1904:newmongo@cluster0.m2oyo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI;
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
