@@ -7,7 +7,10 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const Sale = require('./models/Sales');
-const stripe = require('stripe')('sk_test_51QNXL0Ezjpdl2chbMqNv9zM46ZqDJtZU7rsaM89rGP5ypQlozkU6r8iKE8ELOcBY5U8Z6PLttH95w3zGQAMnlx5z009waBTa65');
+require('dotenv').config();
+
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
 
 const app = express();
 
