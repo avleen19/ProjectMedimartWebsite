@@ -30,7 +30,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/sign-up', {
+      const response = await fetch('https://projectmedimartwebsite-backend.onrender.com/api/sign-up', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
