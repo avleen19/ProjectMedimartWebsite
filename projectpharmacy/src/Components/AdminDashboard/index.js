@@ -23,7 +23,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/products');
+                const response = await axios.get('https://projectmedimartwebsite-backend.onrender.com/api/products');
                 setProducts(response.data);
                 console.log('Fetched products:', response.data); 
             } catch (error) {
@@ -36,7 +36,7 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchSales = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/sales');
+                const response = await axios.get('https://projectmedimartwebsite-backend.onrender.com/api/sales');
                 setSales(response.data);
                 console.log('Fetched sales:', response.data); // Log the fetched sales data
             } catch (error) {
@@ -59,7 +59,7 @@ const AdminDashboard = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/api/products', productToAdd);
+            const response = await axios.post('https://projectmedimartwebsite-backend.onrender.com', productToAdd);
             setProducts([...products, response.data]);
             console.log('Product added:', response.data); 
             setNewProduct({ name: '', price: '', description: '', imageUrl: '', category: '', quantity: '' });
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
         };
 
         try {
-            const response = await axios.put(`http://localhost:5000/api/products/${editingProduct._id}`, updatedProduct);
+            const response = await axios.put(`https://projectmedimartwebsite-backend.onrender.com/api/products/${editingProduct._id}`, updatedProduct);
             setProducts(products.map((product) => (product._id === editingProduct._id ? response.data : product)));
             console.log('Product updated:', response.data);
             setEditingProduct(null);
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
 
     const deleteProduct = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`);
+            await axios.delete(`https://projectmedimartwebsite-backend.onrender.com/api/products/${id}`);
             setProducts(products.filter((product) => product._id !== id));
             console.log(`Product with ID ${id} deleted`); // Debugging log
         } catch (error) {
