@@ -7,7 +7,9 @@ const Home =()=>{
       <>
      <HomeBanner></HomeBanner>
      <Products></Products>
+     <ContactUs></ContactUs>
      <AboutUs></AboutUs>
+        
       </>
     )
   }
